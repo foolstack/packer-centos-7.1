@@ -1,7 +1,8 @@
 VBOX_VERSION=$(cat /home/vagrant/.vbox_version)
 
-# required for VirtualBox 4.3.26
-yum install -y bzip2
+yum update -y
+yum install -y gcc bzip2 kernel-devel kernel-headers perl make
+yum groupinstall -y 'Development Tools'
 
 cd /tmp
 mount -o loop /home/vagrant/VBoxGuestAdditions_$VBOX_VERSION.iso /mnt
